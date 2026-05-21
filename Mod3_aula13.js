@@ -1,9 +1,9 @@
 const alunos = [
-  { nome: "Ana Silva", nota1: 8.5, nota2: 7.0 },
-  { nome: "Bruno Costa", nota1: 5.0, nota2: 4.5 },
-  { nome: "Carlos Souza", nota1: 9.0, nota2: 9.5 },
-  { nome: "Daniela Lima", nota1: 6.0, nota2: 5.5 },
-  { nome: "Eduardo Ribeiro", nota1: 7.5, nota2: 8.0 }
+  { nome: "Maria Silva", nota1: 8.5, nota2: 7.0 },
+  { nome: "Erica Costa", nota1: 5.0, nota2: 4.5 },
+  { nome: "Julia Antunes", nota1: 9.0, nota2: 9.5 },
+  { nome: "Giovannna Souza", nota1: 6.0, nota2: 5.5 },
+  { nome: "Eduardo Oliveira", nota1: 7.5, nota2: 8.0 }
 ];
 const calcularMedia = (n1, n2) => (n1 + n2) / 2;
 const alunosComMedia = alunos.map(aluno => ({
