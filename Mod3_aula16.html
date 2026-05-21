@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Prática</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef2f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
+
+    h1 { color: #e3350d; margin-bottom: 5px; text-shadow: 2px 2px #fff; }
+    
+    .busca-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+    }
+    input:focus { border-color: #3182ce; }
+
+    button {
+      padding: 12px 20px;
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #2b6cb0; }
+
+    #pokedex-app {
+      width: 100%;
+      max-width: 380px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      width: 100%;
+      padding: 25px;
+      box-sizing: border-box;
+      text-align: center;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .poke-img {
+      width: 160px;
+      height: 160px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      margin: 0 auto 15px;
+    }
+
+    .poke-nome {
+      text-transform: capitalize;
+      margin: 10px 0 5px 0;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .poke-id {
+      color: #666;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .tipos-container {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .badge-tipo {
+      padding: 5px 14px;
+      border-radius: 15px;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .stats-container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .stat-linha {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #444;
+    }
+    .stat-linha:last-child { margin-bottom: 0; }
+    .stat-nome { text-transform: uppercase; font-weight: 600; }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 15px;
+    }
+    .btn-nav {
+      background-color: #4a5568;
+      padding: 10px 20px;
+    }
+    .btn-nav:hover { background-color: #2d3748; }
+    .btn-nav:disabled { background-color: #cbd5e0; cursor: not-allowed; }
+
+    .status-msg { font-size: 18px; font-weight: 500; color: #555; text-align: center; }
+    .erro { color: #e53e3e; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pokédex</h1>
+
+  <div class="busca-container">
+    <input type="text" id="input-busca" placeholder="Nome ou número do Pokémon">
+    <button id="btn-buscar">Buscar</button>
+  </div>
+
+  <div id="pokedex-app">
+    <div id="conteudo-tela">
+      <p class="status-msg">Digite o nome ou ID de um Pokémon para começar.</p>
+    </div>
+    
+    <div class="nav-container">
+      <button id="btn-anterior" class="btn-nav" disabled>◀ Anterior</button>
+      <button id="btn-proximo" class="btn-nav" disabled>Próximo ▶</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
