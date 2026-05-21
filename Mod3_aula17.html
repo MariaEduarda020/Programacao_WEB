@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Quiz Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <header>
+      <div class="recorde-badge">🏆 Recorde: <span id="high-score">0</span></div>
+      <button id="btn-tema" aria-label="Alternar tema">🌓 Modo Escuro</button>
+    </header>
+
+    <section id="tela-config" class="tela">
+      <h2>Configurar Partida</h2>
+      <div class="campo-config">
+        <label for="select-categoria">Categoria:</label>
+        <select id="select-categoria">
+          <option value="tecnologia">Tecnologia</option>
+          <option value="ciencia">Ciência</option>
+          <option value="historia">História</option>
+        </select>
+      </div>
+      <div class="campo-config">
+        <label for="select-dificuldade">Dificuldade:</label>
+        <select id="select-dificuldade">
+          <option value="facil">Fácil (15s)</option>
+          <option value="medio">Médio (10s)</option>
+          <option value="dificil">Difícil (5s)</option>
+        </select>
+      </div>
+      <button id="btn-iniciar" class="btn-principal">Começar Quiz 🚀</button>
+    </section>
+
+    <section id="tela-jogo" class="tela escondido">
+      <div class="Painel-status">
+        <div class="progresso-wrapper">
+          <div id="barra-progresso"></div>
+        </div>
+        <div id="timer">15</div>
+      </div>
+
+      <div id="caixa-pergunta" class="fade">
+        <h3 id="texto-pergunta">Texto da pergunta aqui?</h3>
+        <div id="container-alternativas"></div>
+      </div>
+
+      <button id="btn-proxima" class="btn-principal escondido">Avançar ➡️</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
