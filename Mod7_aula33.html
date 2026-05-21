@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div id="tela-login" class="card">
+      <h2>🔐 Acessar Sistema</h2>
+      <form id="form-login">
+        <input type="email" id="login-email" placeholder="E-mail" required value="maria@escola.com">
+        <input type="password" id="login-senha" placeholder="Senha" required value="admin_super_segura">
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <div id="tela-dashboard" class="escondido">
+      <header>
+        <h2>📦 Painel de Produtos</h2>
+        <button id="btn-logout" class="btn-perigo">Sair 🚪</button>
+      </header>
+
+      <section class="card">
+        <h3>Cadastrar Novo Produto</h3>
+        <form id="form-produto">
+          <input type="text" id="prod-nome" placeholder="Nome do Produto" required>
+          <input type="number" id="prod-preco" placeholder="Preço (R$)" step="0.01" required>
+          <select id="prod-categoria" required>
+            </select>
+          <button type="submit">Salvar Produto</button>
+        </form>
+      </section>
+
+      <section class="filtros">
+        <label for="filtro-categoria">Filtrar por Categoria:</label>
+        <select id="filtro-categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+      </section>
+
+      <div id="lista-produtos"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
