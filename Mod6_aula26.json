@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Notebook Pro",
+    "preco": 4500.00,
+    "categoria": "Eletrônicos"
+  },
+  {
+    "id": 2,
+    "nome": "Teclado Mecânico",
+    "preco": 350.00,
+    "categoria": "Acessórios"
+  },
+  {
+    "id": 3,
+    "nome": "Mouse Gamer",
+    "preco": 180.00,
+    "categoria": "Acessórios"
+  },
+  {
+    "id": 4,
+    "nome": "Monitor 4K",
+    "preco": 2100.00,
+    "categoria": "Eletrônicos"
+  }
+]
