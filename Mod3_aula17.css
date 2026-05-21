@@ -1,0 +1,122 @@
+
+:root {
+  --bg-principal: #f0f2f5;
+  --bg-card: #ffffff;
+  --texto: #1a202c;
+  --primaria: #4f46e5;
+  --primaria-hover: #4338ca;
+  --cor-acerto: #10b981;
+  --cor-erro: #ef4444;
+  --borda: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  --bg-principal: #0f172a;
+  --bg-card: #1e293b;
+  --texto: #f8fafc;
+  --borda: #334155;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-principal);
+  color: var(--texto);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.quiz-container {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 550px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progresso-wrapper {
+  background-color: var(--borda);
+  height: 8px;
+  border-radius: 4px;
+  flex: 1;
+  overflow: hidden;
+}
+#barra-progresso {
+  background-color: var(--primaria);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.Painel-status {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#timer {
+  font-weight: bold;
+  font-size: 18px;
+  min-width: 30px;
+}
+
+button, .alternativa {
+  font-size: 16px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-principal {
+  background-color: var(--primaria);
+  color: white;
+  border: none;
+  width: 100%;
+}
+.btn-principal:hover { background-color: var(--primaria-hover); }
+
+.alternativa {
+  background-color: var(--bg-card);
+  border: 2px solid var(--borda);
+  color: var(--texto);
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.alternativa:not(:disabled):hover {
+  border-color: var(--primaria);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.alternativa.correta {
+  background-color: var(--cor-acerto) !important;
+  border-color: var(--cor-acerto) !important;
+  color: white;
+}
+.alternativa.errada {
+  background-color: var(--cor-erro) !important;
+  border-color: var(--cor-erro) !important;
+  color: white;
+}
+
+.escondido { display: none !important; }
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+.fade-out { opacity: 0; }
